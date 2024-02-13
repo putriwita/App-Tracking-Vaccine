@@ -1,0 +1,26 @@
+﻿@model String
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewBag.Login</h1>
+<form>
+  <div class="form-group">
+    <label for="myInput">Input:</label>
+    <input type="text" class="form-control" id="myInput" name="myInput">
+    <div class="invalid-feedback">
+      Please enter a value.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" onclick="validateForm()">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+  const input = document.getElementById("myInput");
+  if (input.value.trim() === "") {
+    input.classList.add("is-invalid");
+    return false;
+  }
+  return true;
+}
+</script>

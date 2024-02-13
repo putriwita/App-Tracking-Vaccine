@@ -1,0 +1,30 @@
+﻿@model List<Project_try.Models.ReportInnVaksin>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "../Shared/_Layout2.cshtml";
+}
+<a class="btn btn-primary" asp-area="" asp-controller="RumahSakitHome" asp-action="AddReportVaksin" asp-route-user_id="@ViewData["ID"]" asp-route-users="@ViewData["Users"]">Add Report Vaksin </a>
+<h1> List Vaksin Yang Terdaftar </h1>
+<div classs="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>No </th>
+            <th>Nama Vaksin</th>
+            <th>jumlah_vaksin</th>
+            <th>Date Add Vaksin</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+                            <tr>
+                                <td>@item.id</td>
+                                <td>@item.nama_vaksin</td>
+                                <td>@item.jumlah_vaksin</td>
+                                <td>@item.Date_In_Vaksin</td>
+                            </tr>
+            }
+    </tbody>
+</table>
+</div>

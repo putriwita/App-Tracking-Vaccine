@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="proyek_tryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Penduduk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Provinsi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Kabupaten" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Kecamatan" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name_penduduk" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="tanggal_lahir" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportInnVaksin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name_rumah_sakit" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="jumlah_vaksin" Type="int" Nullable="false" />
+          <Property Name="Date_In_Vaksin" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="nama_vaksin" Type="nvarchar(max)" />
+          <Property Name="id_rumah_sakit" Type="nvarchar(max)" />
+          <Property Name="id_vaksin" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ReportUseVaksin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_rumah_sakit" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name_patient" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name_vaksin" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="time_vaksin" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="nik_patient" Type="nvarchar(max)" />
+          <Property Name="id_vaksin" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nama_Badan" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="roles" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="phone" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vaksins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NameVaksin" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Dosis" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="min_age_used" Type="int" Nullable="false" />
+          <Property Name="description_vaksin" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="proyek_tryModelStoreContainer">
+          <EntitySet Name="Penduduk" EntityType="Self.Penduduk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportInnVaksin" EntityType="Self.ReportInnVaksin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportUseVaksin" EntityType="Self.ReportUseVaksin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vaksins" EntityType="Self.Vaksins" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="proyek_tryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Penduduk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Provinsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kabupaten" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kecamatan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_penduduk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tanggal_lahir" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="ReportInnVaksin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="name_rumah_sakit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="jumlah_vaksin" Type="Int32" Nullable="false" />
+          <Property Name="Date_In_Vaksin" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="nama_vaksin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_rumah_sakit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_vaksin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReportUseVaksin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="id_rumah_sakit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_patient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_vaksin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="time_vaksin" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="nik_patient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_vaksin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Nama_Badan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vaksin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="NameVaksin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="min_age_used" Type="Int32" Nullable="false" />
+          <Property Name="description_vaksin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="proyek_tryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Penduduks" EntityType="Self.Penduduk" />
+          <EntitySet Name="ReportInnVaksins" EntityType="Self.ReportInnVaksin" />
+          <EntitySet Name="ReportUseVaksins" EntityType="Self.ReportUseVaksin" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Vaksins" EntityType="Self.Vaksin" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="proyek_tryModelStoreContainer" CdmEntityContainer="proyek_tryEntities">
+          <EntitySetMapping Name="Penduduks">
+            <EntityTypeMapping TypeName="proyek_tryModel.Penduduk">
+              <MappingFragment StoreEntitySet="Penduduk">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nik" ColumnName="nik" />
+                <ScalarProperty Name="Provinsi" ColumnName="Provinsi" />
+                <ScalarProperty Name="Kabupaten" ColumnName="Kabupaten" />
+                <ScalarProperty Name="Kecamatan" ColumnName="Kecamatan" />
+                <ScalarProperty Name="name_penduduk" ColumnName="name_penduduk" />
+                <ScalarProperty Name="tanggal_lahir" ColumnName="tanggal_lahir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportInnVaksins">
+            <EntityTypeMapping TypeName="proyek_tryModel.ReportInnVaksin">
+              <MappingFragment StoreEntitySet="ReportInnVaksin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name_rumah_sakit" ColumnName="name_rumah_sakit" />
+                <ScalarProperty Name="jumlah_vaksin" ColumnName="jumlah_vaksin" />
+                <ScalarProperty Name="Date_In_Vaksin" ColumnName="Date_In_Vaksin" />
+                <ScalarProperty Name="nama_vaksin" ColumnName="nama_vaksin" />
+                <ScalarProperty Name="id_rumah_sakit" ColumnName="id_rumah_sakit" />
+                <ScalarProperty Name="id_vaksin" ColumnName="id_vaksin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportUseVaksins">
+            <EntityTypeMapping TypeName="proyek_tryModel.ReportUseVaksin">
+              <MappingFragment StoreEntitySet="ReportUseVaksin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_rumah_sakit" ColumnName="id_rumah_sakit" />
+                <ScalarProperty Name="name_patient" ColumnName="name_patient" />
+                <ScalarProperty Name="name_vaksin" ColumnName="name_vaksin" />
+                <ScalarProperty Name="time_vaksin" ColumnName="time_vaksin" />
+                <ScalarProperty Name="nik_patient" ColumnName="nik_patient" />
+                <ScalarProperty Name="id_vaksin" ColumnName="id_vaksin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="proyek_tryModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nama_Badan" ColumnName="Nama_Badan" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="roles" ColumnName="roles" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vaksins">
+            <EntityTypeMapping TypeName="proyek_tryModel.Vaksin">
+              <MappingFragment StoreEntitySet="Vaksins">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameVaksin" ColumnName="NameVaksin" />
+                <ScalarProperty Name="Dosis" ColumnName="Dosis" />
+                <ScalarProperty Name="min_age_used" ColumnName="min_age_used" />
+                <ScalarProperty Name="description_vaksin" ColumnName="description_vaksin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

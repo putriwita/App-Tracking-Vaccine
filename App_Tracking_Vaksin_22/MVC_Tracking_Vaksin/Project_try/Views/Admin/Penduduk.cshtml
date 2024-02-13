@@ -1,0 +1,33 @@
+﻿@model List<Project_try.Models.Penduduk>
+@{
+    ViewData["Title"] = "Penduduk";
+    Layout = "../Shared/_Layout1.cshtml";
+}
+
+<h1> Daftar Penduduk Terdaftar </h1>
+<a asp-action="add" asp-controller="Penduduk" class="btn btn-primary">Register Data Penduduk</a>
+<div classs="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>No </th>
+            <th>NIK</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Alamat</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.nik</td>
+                                        <td>@item.name_penduduk</td>
+                                            <td>@item.tanggal_lahir.ToString("yyyy-MM-dd")</td>
+                                        <td>@item.Provinsi,@item.Kecamatan,@item.Kabupaten</td>
+                                    </tr>
+            }
+    </tbody>
+</table>
+</div>

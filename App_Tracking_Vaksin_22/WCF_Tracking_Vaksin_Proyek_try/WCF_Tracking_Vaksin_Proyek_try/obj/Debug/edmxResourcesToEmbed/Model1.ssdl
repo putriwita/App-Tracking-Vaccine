@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="proyek_tryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Penduduk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nik" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Provinsi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kabupaten" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kecamatan" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name_penduduk" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tanggal_lahir" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReportInnVaksin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="name_rumah_sakit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="jumlah_vaksin" Type="int" Nullable="false" />
+    <Property Name="Date_In_Vaksin" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="nama_vaksin" Type="nvarchar(max)" />
+    <Property Name="id_rumah_sakit" Type="nvarchar(max)" />
+    <Property Name="id_vaksin" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ReportUseVaksin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="id_rumah_sakit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name_patient" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name_vaksin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="time_vaksin" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="nik_patient" Type="nvarchar(max)" />
+    <Property Name="id_vaksin" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nama_Badan" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="roles" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="phone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vaksins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NameVaksin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dosis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="min_age_used" Type="int" Nullable="false" />
+    <Property Name="description_vaksin" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="proyek_tryModelStoreContainer">
+    <EntitySet Name="Penduduk" EntityType="Self.Penduduk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportInnVaksin" EntityType="Self.ReportInnVaksin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportUseVaksin" EntityType="Self.ReportUseVaksin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vaksins" EntityType="Self.Vaksins" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

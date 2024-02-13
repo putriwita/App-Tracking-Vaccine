@@ -1,0 +1,42 @@
+﻿@model Project_try.Models.AddViewModelRumahSakit
+@{
+    ViewData["Title"] = "Add";
+      
+}
+<h1>Daftar Akun Rumah Sakit</h1>
+@if(ViewBag.Validate == "Validate"){
+<div class="alert alert-warning" role="alert">
+    @Html.ValidationSummary()
+</div>
+}
+@using (Html.BeginForm("Adds", "RumahSakit", FormMethod.Post)){
+  <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Nama Rumah Sakit</label>
+    <input type="text" class="form-control" asp-for="Nama_Badan">
+  </div>
+   <div class="mb-3">
+    <label for="InputNamePenduduk" class="form-label">Lokasi</label>
+    <input type="text" class="form-control" asp-for="Location">
+  </div>
+   <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Phone</label>
+    <input type="text" class="form-control" asp-for="phone" >
+  <div class="mb-3">
+        <label for="InputProvinsi" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="email" >
+    </div>
+         <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">Username</label>
+            <input type="text" class="form-control" asp-for="username" >
+        </div>
+             <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">Password</label>
+                <input type="password" class="form-control" asp-for="password">
+                                        <input type="hidden" class="form-control" asp-for="roles" value="Rumah Sakit">
+
+        </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+   
+}

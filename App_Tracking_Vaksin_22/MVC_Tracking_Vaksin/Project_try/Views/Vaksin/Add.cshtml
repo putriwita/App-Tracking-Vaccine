@@ -1,0 +1,32 @@
+﻿@model Project_try.Models.AddViewModelVaksin
+@{
+    ViewData["Title"] = "Add";
+      
+}
+<h1>Daftar Vaksin Produsen</h1>
+
+@if(ViewBag.Validate == "Validate"){
+<div class="alert alert-warning" role="alert">
+    @Html.ValidationSummary()
+</div>
+}
+@using (Html.BeginForm("Adds", "Vaksin", FormMethod.Post)){
+  <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Nama Vaksin</label>
+    <input type="text" class="form-control" asp-for="NameVaksin">
+  </div>
+   <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Dosis Penggunaan</label>
+    <input type="text" class="form-control" asp-for="Dosis">
+  </div>
+   <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Batas Umur Pengguna</label>
+    <input type="number" class="form-control" asp-for="min_age_used" value="0">
+  <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Deskripsi Vaksin</label>
+    <textarea class="form-control" asp-for="description_vaksin"> </textarea>
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+   
+}

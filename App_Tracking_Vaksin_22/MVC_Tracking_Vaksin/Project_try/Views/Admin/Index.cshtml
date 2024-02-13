@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "../Shared/_Layout1.cshtml";
+}
+
+<h1>Welcome Admin</h1>
+
+    <div class="col-md-4" style="margin-left:100px;">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="far fa-hospital	"></i>
+                <h4 class="card-title">Rumah Sakit</h4>
+                <p class="card-text"> Jumlah Terdaftar: @ViewData["count_RumahSakit"]</p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="col-md-4" style="margin-left:100px;">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-eye-dropper"></i>
+                <h4 class="card-title">Vaksin</h4>
+                <p class="card-text">Jumlah Terdaftar: @ViewData["count_Vaksin"]</p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="col-md-4" style="margin-left:100px;">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-user-friends	"></i>
+                <h4 class="card-title">Penduduk</h4>
+                <p class="card-text">Jumlah Terdaftar: @ViewData["count_penduduk"]</p>
+            </div>
+        </div>
+    </div>

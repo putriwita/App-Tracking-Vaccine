@@ -1,0 +1,34 @@
+﻿@model List<Project_try.Models.Users>
+@{
+    ViewData["Title"] = "Rumah Sakit";
+    Layout = "../Shared/_Layout1.cshtml";
+}
+
+<h1> Daftar Rumah Sakit Terdaftar </h1>
+<a asp-action="add" asp-controller="RumahSakit" class="btn btn-primary">Register Rumah Sakit</a>
+<div classs="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Rumah Sakit </th>
+            <th>Nama Rumah Sakit</th>
+            <th>Lokasi</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Nama_Badan</td>
+                                    <td>@item.Location</td>
+                                    <td>@item.email</td>
+                                    <td>@item.phone</td>
+                                </tr>
+            }
+    </tbody>
+</table>
+</div>
+

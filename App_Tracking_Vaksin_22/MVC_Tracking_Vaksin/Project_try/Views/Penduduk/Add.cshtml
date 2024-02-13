@@ -1,0 +1,39 @@
+﻿@model Project_try.Models.AddViewModelPenduduk
+@{
+    ViewData["Title"] = "Add";
+      
+}
+<h1>Daftar Penduduk</h1>
+@if(ViewBag.Validate == "Validate"){
+<div class="alert alert-warning" role="alert">
+    @Html.ValidationSummary()
+</div>
+}
+@using (Html.BeginForm("Adds", "Penduduk",new { users_id = ViewData["ID"],users = ViewData["users"] }, FormMethod.Post)){
+    <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">NIK Penduduk</label>
+    <input type="text" class="form-control" asp-for="nik">
+  </div>
+   <div class="mb-3">
+    <label for="InputNamePenduduk" class="form-label">Nama Penduduk</label>
+    <input type="text" class="form-control" asp-for="name_penduduk">
+  </div>
+   <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Tanggal Lahir Penduduk</label>
+    <input type="date" class="form-control" asp-for="tanggal_lahir" value="0">
+  <div class="mb-3">
+        <label for="InputProvinsi" class="form-label">Provinsi</label>
+        <input type="text" class="form-control" asp-for="Provinsi" >
+    </div>
+         <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">Kabupaten</label>
+            <input type="text" class="form-control" asp-for="Kabupaten" >
+        </div>
+             <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">Kecamatan</label>
+            <input type="text" class="form-control" asp-for="Kecamatan">
+        </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+   
+}

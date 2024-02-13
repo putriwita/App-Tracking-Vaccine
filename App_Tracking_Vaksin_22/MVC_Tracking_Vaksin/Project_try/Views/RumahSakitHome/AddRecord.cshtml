@@ -1,0 +1,43 @@
+﻿@model Project_try.Models.AddViewModelReportUseVaksin
+@{
+    ViewData["Title"] = "Add";
+}
+@{
+    Layout = "../Shared/_Layout2.cshtml";
+}
+
+<h1>Report Vaksin</h1>
+
+@if (ViewBag.Validate == "Validate")
+{
+        <div class="alert alert-warning" role="alert">
+        @Html.ValidationSummary()
+            <p class="text-danger"> @ViewBag.ErrorName</p>
+        </div>
+}
+
+@using (Html.BeginForm("Addsz", "RumahSakitHome", new { user_id = ViewData["ID"], users = ViewData["Users"] }, FormMethod.Post))
+{
+        <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">Nama Vaksin</label>
+            <input type="text" class="form-control" asp-for="name_vaksin">
+        </div>
+        <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">No Register Vaksin</label>
+            <input type="text" class="form-control" asp-for="id_vaksin">
+        </div>
+        <div class="mb-3">
+            <label for="InputNamePenduduk" class="form-label">Nama Pasien</label>
+            <input type="text" class="form-control" asp-for="name_patient">
+        </div>
+        <div class="mb-3">
+            <label for="InputNamePenduduk" class="form-label">NIK Pasien</label>
+            <input type="text" class="form-control" asp-for="nik_patient">
+        </div>
+        <div class="mb-3">
+            <label for="InputNameVaksin" class="form-label">Waktu Vaksin</label>
+            <input type="datetime-local" class="form-control" asp-for="time_vaksin">
+        </div>
+        <input type="text" class="form-control" asp-for="id_rumah_sakit" hidden value="@ViewData["ID"]">
+        <button type="submit" class="btn btn-primary">Submit</button>
+}

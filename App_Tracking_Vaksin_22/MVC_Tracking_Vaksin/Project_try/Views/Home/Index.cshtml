@@ -1,0 +1,32 @@
+﻿@model List<Project_try.Models.Vaksin>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1> List Vaksin Yang Terdaftar </h1>
+
+<div classs="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Vaksin </th>
+            <th>Nama Vaksin</th>
+            <th>Batas Umur Pengguna</th>
+            <th>Dosis Penggunaan</th>
+            <th>Deskripsi Vaksin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NameVaksin</td>
+                <td>@item.min_age_used</td>
+                <td>@item.Dosis</td>
+                <td>@item.description_vaksin</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

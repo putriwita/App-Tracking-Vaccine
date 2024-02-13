@@ -1,0 +1,42 @@
+﻿
+@model Project_try.Models.AddViewModelReportInnVaksin
+@{
+    ViewData["Title"] = "Add";
+
+}
+@{
+    Layout = "../Shared/_Layout2.cshtml";
+}
+
+<h1>Daftar Penduduk</h1>
+@if(ViewBag.Validate == "Validate"){
+<div class="alert alert-warning" role="alert">
+    @Html.ValidationSummary()
+    <p class="text-danger"> @ViewBag.ErrorName</p>
+</div>
+}
+@using (Html.BeginForm("Adds", "RumahSakitHome", FormMethod.Post)){
+
+  <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Nama Vaksin</label>
+    <input type="text" class="form-control" asp-for="nama_vaksin" >
+  </div>
+      <div class="mb-3">
+        <label for="InputNameVaksin" class="form-label">No Register Vaksin</label>
+        <input type="text" class="form-control" asp-for="id_vaksin" >
+      </div>
+   <div class="mb-3">
+    <label for="InputNamePenduduk" class="form-label">Jumlah Vaksin</label>
+    <input type="number" class="form-control" asp-for="jumlah_vaksin">
+  </div>
+   <div class="mb-3">
+    <label for="InputNameVaksin" class="form-label">Tanggal Kedatangan Vaksin</label>
+    <input type="date" class="form-control" asp-for="Date_In_Vaksin" >
+        </div>
+                <input type="text" class="form-control" asp-for="name_rumah_sakit"  hidden value="@ViewData["Users"]">
+        <input type="text" class="form-control" asp-for="id_rumah_sakit" hidden value="@ViewData["ID"]">
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+   
+}

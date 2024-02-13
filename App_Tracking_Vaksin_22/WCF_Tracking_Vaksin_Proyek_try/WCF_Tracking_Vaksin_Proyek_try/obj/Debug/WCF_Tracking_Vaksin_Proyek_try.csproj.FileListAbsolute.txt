@@ -1,0 +1,12 @@
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\WCF_Tracking_Vaksin_Proyek_try.dll.config
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\WCF_Tracking_Vaksin_Proyek_try.dll
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\WCF_Tracking_Vaksin_Proyek_try.pdb
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\EntityFramework.dll
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\EntityFramework.SqlServer.dll
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\EntityFramework.xml
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\bin\EntityFramework.SqlServer.xml
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\obj\Debug\WCF_Tracking_Vaksin_Proyek_try.csproj.AssemblyReference.cache
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\obj\Debug\WCF_Tracking_Vaksin_Proyek_try.csproj.CoreCompileInputs.cache
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\obj\Debug\WCF_Tracking_Vaksin_Proyek_try.csproj.CopyComplete
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\obj\Debug\WCF_Tracking_Vaksin_Proyek_try.dll
+D:\Semester4\z_C#\WCF_Tracking_Vaksin_Proyek_try\WCF_Tracking_Vaksin_Proyek_try\obj\Debug\WCF_Tracking_Vaksin_Proyek_try.pdb
